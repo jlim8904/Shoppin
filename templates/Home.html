@@ -1,0 +1,141 @@
+{% extends "Navbar.html" %}
+
+{% block title %}書品Shoppin{% endblock title %}
+
+{% block banner %}
+<section class="section-home-banner">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active ratio" style="--bs-aspect-ratio: 28%">
+            <img src="static/pic/Full-BookCD-banner.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item ratio" style="--bs-aspect-ratio: 28%">
+            <img src="static/pic/Full-BookCD-banner.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item ratio" style="--bs-aspect-ratio: 28%">
+            <img src="static/pic/Full-BookCD-banner.jpg" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+</section>
+{% endblock banner %}
+
+{% block content %}
+<section class="section-home-products my-4">
+    <h3>Books</h3>
+    <div class="row products px-2 border border-1 rounded">
+        {% for id,name,shop,type,description,storage,price in books  %}
+            <div class="col-3 product">
+                <div class="product-content">
+                    <img src="static/pic/{{id}}.jpg" class="img-fluid overflow-hidden" alt="" style="height:300px">
+                    <p class="name" style="height:80px;text-align:center">{{name}}</p>
+                    <p class="price">NTD {{price}}</p>
+                    <form method="post" action="productDetail">
+                        <input type="hidden" name="productid" value="{{id}}">
+                        <button type="submit" class="btn btn-outline-info">Details</button>
+                    </form>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="section-home-products my-4">
+    <h3>CDs</h3>
+    <div class="row products px-2 border border-1 rounded">
+        <div class="col-3 product">
+            <div class="product-content">
+                <img src="static/pic/dvd-cover-mockup-template.jpg" class="img-fluid overflow-hidden" alt="">
+                <p class="name">cd Name</p>
+                <p class="price">NTD 300</p>
+                <form method='post' action="productDetail">
+                    <button type="submit" class="btn btn-outline-info">Details</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-3 product">
+            <div class="product-content">
+                <img src="static/pic/dvd-cover-mockup-template.jpg" class="img-fluid overflow-hidden" alt="">
+                <p class="name">cd Name</p>
+                <p class="price">NTD 300</p>
+                <form method='post' action="productDetail">
+                    <button type="submit" class="btn btn-outline-info">Details</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-3 product">
+            <div class="product-content">
+                <img src="static/pic/dvd-cover-mockup-template.jpg" class="img-fluid overflow-hidden" alt="">
+                <p class="name">cd Name</p>
+                <p class="price">NTD 300</p>
+                <form method='post' action="productDetail">
+                    <button type="submit" class="btn btn-outline-info">Details</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-3 product">
+            <div class="product-content">
+                <img src="static/pic/dvd-cover-mockup-template.jpg" class="img-fluid overflow-hidden" alt="">
+                <p class="name">cd Name</p>
+                <p class="price">NTD 300</p>
+                <form method='post' action="productDetail">
+                    <button type="submit" class="btn btn-outline-info">Details</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-3 product">
+            <div class="product-content">
+                <img src="static/pic/dvd-cover-mockup-template.jpg" class="img-fluid overflow-hidden" alt="">
+                <p class="name">cd Name</p>
+                <p class="price">NTD 300</p>
+                <form method='post' action="productDetail">
+                    <button type="submit" class="btn btn-outline-info">Details</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-3 product">
+            <div class="product-content">
+                <img src="static/pic/dvd-cover-mockup-template.jpg" class="img-fluid overflow-hidden" alt="">
+                <p class="name">cd Name</p>
+                <p class="price">NTD 300</p>
+                <form method='post' action="productDetail">
+                    <button type="submit" class="btn btn-outline-info">Details</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-3 product">
+            <div class="product-content">
+                <img src="static/pic/dvd-cover-mockup-template.jpg" class="img-fluid overflow-hidden" alt="">
+                <p class="name">cd Name</p>
+                <p class="price">NTD 300</p>
+                <form method='post' action="productDetail">
+                    <button type="submit" class="btn btn-outline-info">Details</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-3 product">
+            <div class="product-content">
+                <img src="static/pic/dvd-cover-mockup-template.jpg" class="img-fluid overflow-hidden" alt="">
+                <p class="name">cd Name</p>
+                <p class="price">NTD 300</p>
+                <form method='post' action="productDetail">
+                    <button type="submit" class="btn btn-outline-info">Details</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %} 

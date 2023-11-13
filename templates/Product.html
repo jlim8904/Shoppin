@@ -1,0 +1,154 @@
+{% extends "Navbar.html" %}
+
+{% block title %}商品資訊{% endblock title %}
+
+{% block searchbar %}
+{% endblock searchbar %}
+
+{% block content %}
+{% for id,name,shop,type,description,storage,price in product %}
+<section class="section-Product-product-data">
+    <form action="cart" , method="post">
+        <input type="text" value="{{id}}" style="visibility: hidden;" name="productid">
+        <div class="content row">
+            <div class="left-content col-5">
+                <div class="image">
+                    <img src="static/pic/{{id}}.jpg" class="img-fluid overflow-hidden" alt="">
+                </div>
+            </div>
+            <div class="right-content col-7">
+                <div>
+                    <div class="name">
+                        <h2>{{name}}</h2>
+                    </div>
+                    <div class="source">
+                        <p>作者：Pentawards/ Julius Wiedemann</p>
+                        <p>出版社：TASCHEN GmbH</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="price">
+                        NTD {{price}}
+                    </div>
+                    <div class="amount row" style="width: 40%;">
+                        <button class="col-4 btn btn-outline-secondary rounded-5" type="button"
+                            onclick="minus('amount')">-</button>
+                        <input
+                            class="col-4 d-flex flex-row justify-content-center align-items-center text-center border-0"
+                            id="amount" name="productAmount" value="0">
+                        <button class="col-4 btn btn-outline-secondary rounded-5" type="button"
+                            onclick="plus('amount')">+</button>
+                    </div>
+                </div>
+                <div>
+                    <div class="add-to-cart">
+                        <button class="btn btn-primary" type="submit">Add to Cart</button>
+                    </div>
+                    <div class="storage">
+                        {{storage}} Left
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</section>
+<section class="section-Product-product-description">
+    <dev class="title">
+        <h3>Description</h3>
+    </dev>
+    <dev class="content">
+        <p>{{description}}<br>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat perferendis temporibus
+            nam accusantium repudiandae itaque obcaecati. Qui quaerat ipsam mollitia eligendi, fuga fugit voluptatibus.
+            Suscipit eos quaerat amet dignissimos molestiae.
+            Quo tenetur praesentium explicabo ipsum dolorum et modi aliquam cumque quia eos laboriosam, facere officia
+            eligendi fugit voluptatem neque sequi incidunt amet. Voluptate iusto repudiandae, quas cupiditate voluptatum
+            veniam doloribus.
+            Quibusdam ullam voluptatibus architecto expedita deleniti nesciunt molestiae, possimus nam ducimus. Quidem
+            itaque porro blanditiis illum maxime ipsa explicabo, obcaecati quos officia officiis harum doloremque magnam
+            adipisci rerum repudiandae esse?
+            Ab eveniet nostrum quod, maiores nemo adipisci fugiat alias quisquam perspiciatis quidem magni ut ad
+            exercitationem nesciunt nam recusandae possimus, deleniti illum porro inventore quos! Culpa quibusdam
+            dolorum laborum ad?
+            Itaque sed aliquid dolorem quia tempora dolorum expedita soluta, fugit unde laudantium! Ut cumque, mollitia
+            voluptatem porro iste ratione veniam, vitae adipisci, dolorum hic eveniet ad quod beatae sequi iure.</p>
+    </dev>
+</section>
+<section class="section-Product-product-comment">
+    <div class="title">
+        <h3>Comment</h3>
+    </div>
+    <div class="comments">
+        <div class="comment">
+            <div class="who-when">
+                <div class="name">
+                    Yuki
+                </div>
+                <div class="time">
+                    2022-06-10
+                </div>
+            </div>
+            <div class="text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores explicabo recusandae laudantium veniam
+                possimus itaque? Doloribus quidem iusto atque exercitationem tenetur accusantium nemo id error
+                necessitatibus. Iure ullam assumenda nostrum.
+            </div>
+        </div>
+        <div class="comment">
+            <div class="who-when">
+                <div class="name">
+                    Yuki
+                </div>
+                <div class="time">
+                    2022-06-10
+                </div>
+            </div>
+            <div class="text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores explicabo recusandae laudantium veniam
+                possimus itaque? Doloribus quidem iusto atque exercitationem tenetur accusantium nemo id error
+                necessitatibus. Iure ullam assumenda nostrum.
+            </div>
+        </div>
+        <div class="comment">
+            <div class="who-when">
+                <div class="name">
+                    Yuki
+                </div>
+                <div class="time">
+                    2022-06-10
+                </div>
+            </div>
+            <div class="text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores explicabo recusandae laudantium veniam
+                possimus itaque? Doloribus quidem iusto atque exercitationem tenetur accusantium nemo id error
+                necessitatibus. Iure ullam assumenda nostrum.
+            </div>
+        </div>
+        <div class="comment">
+            <div class="who-when">
+                <div class="name">
+                    Yuki
+                </div>
+                <div class="time">
+                    2022-06-10
+                </div>
+            </div>
+            <div class="text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores explicabo recusandae laudantium veniam
+                possimus itaque? Doloribus quidem iusto atque exercitationem tenetur accusantium nemo id error
+                necessitatibus. Iure ullam assumenda nostrum.
+            </div>
+        </div>
+    </div>
+    <div class="add-comment">
+        <form action="" class="form">
+            <div class="input-box col-auto">
+                <input class="form-control" type="text" placeholder="add a comment">
+            </div>
+            <div class="add-but col-auto">
+                <button class="btn btn-primary" type="submit">Add</button>
+            </div>
+        </form>
+    </div>
+</section>
+{% endfor %}
+{% endblock content %}

@@ -1,0 +1,23 @@
+{% extends "Navbar.html" %}
+
+{% block title %}書籍{% endblock title %}
+
+{% block content %}
+<section class="section-Books-bookProducts">
+    <div class="row products px-2 border border-1 rounded">
+        {% for id,name,shop,type,description,storage,price in books  %}
+            <div class="col-3 product">
+                <div class="product-content">
+                    <img src="static/pic/{{id}}.jpg" class="img-fluid overflow-hidden" alt="">
+                    <p class="name">{{name}}</p>
+                    <p class="price">NTD {{price}}</p>
+                    <form method="post" action="productDetail">
+                        <input type="hidden" name="productid" value="{{id}}">
+                        <button type="submit" class="btn btn-outline-info">Details</button>
+                    </form>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock content %} 

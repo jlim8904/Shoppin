@@ -1,0 +1,42 @@
+{% extends "Navbar.html" %}
+
+{% block title %}客服{% endblock title %}
+
+{% block searchbar %}
+{% endblock searchbar %}
+
+{% block content %}
+<div class="login">
+    <h2>客服</h2>
+    <i>客服在線時間: 8:00a.m. ~ 5:00p.m.</i>
+    <br><br>
+    <div>
+        <ul style="float:center;">
+            <li><a href="/Chatroom">客服專線</a></li>
+            <li><i>電話: 0987654321</i></li>
+            <li><i>信箱: 123456@gmail.com</i></li>
+            <br><br>    
+        </ul>
+    </div>
+    <div>
+            <h3>相關網址:</h3>
+            <ul>
+                <li>書品Shoppin</li>
+                <li>Shoppin.co</li>
+                <li>Shoppin Official</li>
+            </ul>
+            <br>
+        </div>
+        <br>
+        <div>
+            <h3>FAQ</h3>
+            <a href="javascript:" onclick="hide1.style.display=hide1.style.display=='none'?'':'none'">如何更改帳號資料</a>
+            <br>
+            <span id="hide1" style="display:none">(再以登入的情況下)<br>右上角帳號圖標 > 我的帳號 </span>
+            <a href="javascript:" onclick="hide2.style.display=hide2.style.display=='none'?'':'none'">如何查看我當前擁有的訂單</a>
+            <br>
+            <span id="hide2" style="display:none">(再以登入的情況下)<br>右上角帳號圖標 > 我的訂單 </span>
+        </div>
+    </div>
+</div>
+{% endblock content %} 

@@ -1,0 +1,88 @@
+{% extends "Navbar.html" %}
+
+{% block title %}購物車{% endblock title %}
+
+{% block searchbar %}
+{% endblock searchbar %}
+
+{% block content %}
+<div class="container-fluid mx-auto text-center">
+    <form action="/cart" , method="post">
+        <div class="row fs-5 pt-3" style="align-items: center">
+            <div class="col-5">商品</div>
+            <div class="col-2">單價</div>
+            <div class="col-2">數量</div>
+            <div class="col-2">總計</div>
+            <div class="col-1">操作</div>
+        </div>
+        {% for ProductID, ProductName, Price, Quantity in products %}
+        <div class="row mb-5" style="align-items: center" id="{{ProductID}}">
+            <img src="static/pic/{{ProductID}}.jpg" alt="" class="col-2">
+            <div class="col-3">{{ProductName}}</div>
+            <div class="col-2" id="{{ProductID}}_price">{{Price}}</div>
+            <div class="col-2 number">
+                <div class="amount row">
+                    <button class="col-4 btn btn-outline-secondary" type="button"
+                        onclick="minusCart('{{ProductID}}')">-</button>
+                    <input class="col-4 d-flex flex-row justify-content-center align-items-center text-center border-0"
+                        id="{{ProductID}}_amount" value="{{Quantity}}">
+                    <button class="col-4 btn btn-outline-secondary" type="button"
+                        onclick="plusCart('{{ProductID}}')">+</button>
+                </div>
+            </div>
+            <input type="text" value="{{Price * Quantity}}" class="col-2 border-0 text-center" disabled
+                id="{{ProductID}}_total_price">
+            <button class="col-1 btn btn-outline-secondary" value="{{ProductID}}" name="delete">刪除</button>
+        </div>
+        {% endfor %}
+        <!-- <button class="btn btn-primary " value="{{ProductID}}" name="buy"">下單</button> -->
+
+    </form>
+    <button type=" button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        下單
+    </button>
+</div>
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <form action="/cart" , method="post">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">填寫訂單資訊</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="/action_page.php">
+                        <label for="cars">選擇信用卡</label>
+                        <select id="cars" name="cars">
+                            <option value="volvo">卡片一</option>
+                            <option value="saab">卡片二</option>
+                            <option value="fiat">卡片三</option>
+                        </select>
+                    </form>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">收件地址</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">收件人</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">備註</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput1">
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button class="btn btn-primary " value="{{ProductID}}" name="buy"" type=" summit"
+                        data-bs-dismiss="modal">下單</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+{% endblock content %}

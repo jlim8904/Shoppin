@@ -1,0 +1,56 @@
+{% extends "Base.html" %}
+
+{% block navbar%}
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <li class="nav-item">
+        <a class="nav-link" href="books">書籍</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="cd">CD</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav mb-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="Chatroom">
+            <img class="icon profile" src="{{url_for('static', filename = 'pic/headphones.png')}}"> 
+          </a>
+        </li>
+        {% if guest %}
+        <li class="nav-item">
+          <a class="nav-link" href="login">
+            <img class="icon profile" src="{{url_for('static', filename = 'pic/login.png')}}"> 
+          </a>
+        </li>
+        {% else %}
+      <li class="nav-item">
+        <a class="nav-link" href="cart">
+          <img class="icon cart" src="{{url_for('static', filename = 'pic/shopping-cart.png')}}"> 
+        </a>
+      </li>
+        <li class="nav-item dropdown" style="float:right">
+          <a class="nav-link dropdown" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <img class="icon profile" src="{{url_for('static', filename = 'pic/profile.png')}}"> 
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="profile">我的賬號</a></li>
+            <li><a class="dropdown-item" href="order_management">訂單管理</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="logout">登出</a></li>
+          </ul>
+        </li>
+        {% endif %}
+    </ul>
+</div>
+{% endblock navbar %}
+
+{% block searchbar %}
+<section class="section-home-banner d-flex justify-content-center align-items-center m-3">
+    <div class="d-flex justify-content-center align-items-center">
+        <form method="post" class="d-flex" role="search" action="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="keyword">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+    </div>
+</section>
+{% endblock searchbar %}

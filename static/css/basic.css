@@ -1,0 +1,238 @@
+.icon.cart{
+    width: 26px;
+    height: 26px;
+}
+.icon.profile{
+    width: 28px;
+    height: 28px;
+}
+
+.login{
+    margin: 80px auto 0;
+    width: 450px; 
+    border-style: solid;
+    border-radius: 20px;
+    text-align: center;
+    padding: 80px;
+  }
+  .loginButton{
+    margin: 50px auto;
+  }
+
+  .section-home-products {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .section-home-products .products .product-content {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px rgb(214, 214, 214) solid;
+    border-radius: 10px;
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .section-home-products .products .product .name {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 0%;
+    height: 80px;
+    text-align: center;
+  }
+
+  .section-home-Products .products .product .img-fluid {
+    height: 300px;
+  }
+
+  .section-Books-bookProducts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .section-Books-bookProducts .products .product-content {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px rgb(214, 214, 214) solid;
+    border-radius: 10px;
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .section-Books-bookProducts .products .product .name {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 0%;
+    height: 80px;
+    text-align: center;
+  }
+
+  .section-Books-bookProducts .products .product .img-fluid {
+    height: 300px;
+  }
+
+  .section-CD-cdProducts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .section-CD-cdProducts .products .product-content {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px rgb(214, 214, 214) solid;
+    border-radius: 10px;
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .section-CD-cdProducts .products .product .name {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 0%;
+    height: 80px;
+    text-align: center;
+  }
+
+  /* .section-CD-cdProducts .products .product .img-fluid {
+    height: 300px;
+  } */
+
+.section-Product-product-data {
+  height: 400px;
+}
+
+.section-Product-product-data .content {
+  height: 100%;
+  border-bottom: 2px solid rgb(241, 241, 241);
+}
+
+.section-Product-product-data .content .left-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-Product-product-data .content .left-content .image img{
+  height: 350px;
+}
+
+.section-Product-product-data .content .right-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.section-Product-product-data .content .name {
+  align-self: baseline;
+}
+
+.section-Product-product-data .content .source p {
+  justify-self: flex-start;
+  align-self: baseline;
+  font-size: small;
+  color: gray;
+
+  padding-left: 8px;
+  margin-bottom: 0%;
+}
+
+.section-Product-product-data .content .amount {
+  padding-left: 20px;
+}
+
+.section-Product-product-data .content .price {
+  display: flex;
+  justify-self: end;
+  align-self: flex-start;
+  font-size: 1.5rem;
+  font-weight: bold;
+
+  padding-left: 10px;
+  margin-bottom: 10px;
+}
+
+.section-Product-product-data .content .add-to-cart {
+  width: 100%;
+  justify-self: end;
+  display: grid;
+
+  padding-top: 10px;
+}
+
+.section-Product-product-data .content .storage {
+  display: flex;
+  justify-content: flex-end;
+
+  font-size: small;
+  color: gray;
+  padding-top: 5px;
+}
+
+.section-Product-product-description {
+  padding: 2rem 5%;
+  border-bottom: 2px solid rgb(241, 241, 241);
+
+}
+
+.section-Product-product-description .title, .section-Product-product-comment .title {
+  display: flex;
+  justify-content: center;
+  
+  color: gray;
+}
+
+.section-Product-product-comment {
+  padding: 2rem 5%;
+}
+
+.section-Product-product-comment .comments .comment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  border: 2px solid rgb(179, 179, 179);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px 0;
+}
+
+.section-Product-product-comment .comments .comment .who-when {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.section-Product-product-comment .comments .comment .who-when .name {
+  font-weight: bold;
+  font-size: 1.2rem;
+  border: 1px solid rgb(203, 203, 203);
+  border-radius: 5px;
+  padding: 1px 5px;
+}
+
+.section-Product-product-comment .add-comment form {
+  display: flex;
+  flex-direction: row;
+}
+
+.section-Product-product-comment .add-comment .input-box {
+  flex-grow: 6;
+
+  margin-right: 10px;
+}

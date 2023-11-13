@@ -1,0 +1,5 @@
+flask
+mysqlclient
+python-dotenv
+flask_bcrypt
+flask_socketio

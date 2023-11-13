@@ -1,0 +1,52 @@
+{% extends "Navbar.html" %}
+
+{% block title %}訂單管理{% endblock title %}
+
+{% block searchbar %}
+{% endblock searchbar %}
+
+{% block content %}
+<section class="section-OrderManagement-content justify-content-center">
+    <ul class="nav nav-pills mb-3 d-flex justify-content-center" id="pills-tab" role="tablist">
+        <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="pills-processing-tab" data-bs-toggle="pill" data-bs-target="#pills-processing" type="button" role="tab" aria-controls="pills-processing" aria-selected="true">進行中</button>
+        </li>
+        <li class="nav-item" role="presentation">
+        <button class="nav-link" id="pills-finished-tab" data-bs-toggle="pill" data-bs-target="#pills-finished" type="button" role="tab" aria-controls="pills-finished" aria-selected="false">已完成</button>
+        </li>
+    </ul>
+    <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade show active" id="pills-processing" role="tabpanel" aria-labelledby="pills-processing-tab" tabindex="0">
+            <div class="card my-3" id="736723847927">
+                <input class="card-header h5 border-0" value="訂單編號：736723847927" disabled></input>
+                <div class="card-body">
+                    <h5 class="card-title">訂單內容</h5>
+                    <div class="row">
+                        <p id="productId1-1" class="card-text col-6 text-center">
+                            Alex Homer, ASP.NET 2.0 Visual Web Developer 2005 x 2
+                        </p>
+                        <p id="productId1-2" class="card-text col-6 text-center">
+                            CakePHP Application Development x 3
+                        </p>
+                    </div>
+                    <div class="process row">
+                        <div class="waiting-product col text-center">訂單成立</div>
+                        <div class="product-delivering col text-center">等待出貨</div>
+                        <div class="product-arrived col text-center">運送中</div>
+                        <div class="order-finished col text-center">等待領貨</div>
+                    </div>
+                    <div class="progress mt-2 mb-5">
+                        <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <div class="order-btn d-flex justify-content-end">
+                        <button type="button" class="maunally-btn btn btn-outline-light" onclick="manuallyProcess('736723847927')">-></button>
+                        <button type="submit" class="finished-btn btn btn-outline-primary mx-2" onclick="finishOrder('736723847927')" disabled>完成訂單</button>
+                        <button type="submit" class="cancle-btn btn btn-outline-danger mx-2">取消訂單</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="pills-finished" role="tabpanel" aria-labelledby="pills-finished-tab" tabindex="0"></div>
+    </div>
+</section>
+{% endblock content %} 

@@ -1,0 +1,16 @@
+{% extends "Base.html" %}
+
+{% block title %}Error Message{% endblock title %}
+
+{% block content %}
+    {% for message,redirect,submit in status %}
+        <div class="login">
+            <div><h5>{{message}}</h5></div><br><br>
+            <div>
+                <form action="/{{redirect}}"style="text-align:center">
+                    <button type="submit" class="btn btn-outline-success">{{submit}}</button>
+                </form>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock content %} 

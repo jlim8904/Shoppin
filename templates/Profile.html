@@ -1,0 +1,128 @@
+{% extends "Navbar.html" %}
+
+{% block title %}我的賬號{% endblock title %}
+
+{% block searchbar %}
+{% endblock searchbar %}
+
+{% block content %}
+<div class="d-flex align-items-center justify-content-center" style="height: 600px;">
+    <div class="nav flex-column nav-pills me-3 col-2" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+      <button class="nav-link active" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="true">個人檔案</button>
+      <button class="nav-link" id="v-pills-cards-tab" data-bs-toggle="pill" data-bs-target="#v-pills-cards" type="button" role="tab" aria-controls="v-pills-cards" aria-selected="false">信用卡</button>
+      <button class="nav-link" id="v-pills-change-password-tab" data-bs-toggle="pill" data-bs-target="#v-pills-change-password" type="button" role="tab" aria-controls="v-pills-change-password" aria-selected="false">更改密碼</button>
+    </div>
+    <div class="col-1"></div>
+    <div class="tab-content col-9" id="v-pills-tabContent">
+        <div class="tab-pane fade show active" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab" tabindex="0">
+            <form>
+                <div class="row mb-3">
+                <label for="inputusername3" class="col-sm-2 col-form-label">使用者名稱</label>
+                <div class="col-sm-10">
+                    <input class="form-control" id="inputusername3" value="{{name}}" onchange="changeActive('save')">
+                </div>
+                </div>
+                <div class="row mb-3">
+                <label for="inputemail3" class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-10">
+                    <input type="email" class="form-control" id="inputemail3" value="{{mail}}" onchange="changeActive('save')">
+                </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="inputphone3" class="col-sm-2 col-form-label">手機號碼</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" id="inputphone3" value="{{phone}}" onchange="changeActive('save')">
+                    </div>
+                </div>
+                <div class="row justify-content-end">
+                    <button type="submit" class="btn btn-primary col-2" id="save" disabled>儲存</button>
+                </div>
+            </form>
+        </div>
+        <div class="tab-pane fade" id="v-pills-cards" role="tabpanel" aria-labelledby="v-pills-cards-tab" tabindex="0">
+
+            <!-- add card model -->
+            <div class="modal fade" id="addCard" tabindex="-1" aria-labelledby="addCardLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="addCardLabel">卡片資訊</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="row mb-3">
+                            <label for="cardNumber" class="col-sm-2 col-form-label">卡號</label>
+                            <div class="col-sm-10">
+                                <input type="password" class="form-control" id="cardNumber">
+                            </div>
+                            </div>
+                            <div class="row mb-3">
+                            <label for="cardDueDate" class="col-sm-2 col-form-label">到期日</label>
+                            <div class="col-sm-10">
+                                <input type="password" class="form-control" id="cardDueDate">
+                            </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="cardSecureKey" class="col-sm-2 col-form-label">安全碼</label>
+                                <div class="col-sm-10">
+                                    <input text="password" class="form-control" id="cardSecureKey">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary col-2" id="add">新增</button>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- add card model -->
+
+            <div class="credit-card row border border-1 p-5 rounded m-4">
+                <h3 class="col-2 text-center">卡片一</h3>
+                <p class="col-2">VISA</p>
+                <input class="border-0 col-6" type="password" value="49834738 99384759" disabled>
+                <button class="btn btn-danger col-2" type="submit">刪除</button>
+            </div>
+            <div class="credit-card row border border-1 p-5 rounded m-4">
+                <h3 class="col-2 text-center">卡片二</h3>
+                <p class="col-2">VISA</p>
+                <input class="border-0 col-6" type="password" value="49834738 99384759" disabled>
+                <button class="btn btn-danger col-2" type="submit">刪除</button>
+            </div>
+            <div class="credit-card row border border-1 rounded m-4">
+                <button class="btn btn-outline-info"  data-bs-toggle="modal" data-bs-target="#addCard">+</button>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="v-pills-change-password" role="tabpanel" aria-labelledby="v-pills-change-password-tab" tabindex="0">
+            <form>
+                <div class="row mb-3">
+                <label for="inputoldpassword3" class="col-sm-2 col-form-label">舊密碼</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" id="inputoldpassword3">
+                </div>
+                </div>
+                <div class="row mb-3">
+                <label for="inputnewpassword3" class="col-sm-2 col-form-label">新密碼</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" id="inputnewpassword3">
+                </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="inputconfirmpassword3" class="col-sm-2 col-form-label">確認新密碼</label>
+                    <div class="col-sm-10">
+                        <input type="password" class="form-control" id="inputconfirmpassword3" onchange="checkPassword()">
+                        <span id="warning" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row justify-content-end">
+                    <button id="savePassword" type="submit" class="btn btn-primary col-2" disabled>更改</button>
+                </div>
+            </form>
+        </div>
+        </div>
+    </div>
+</div>
+{% endblock content %} 

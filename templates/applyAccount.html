@@ -1,0 +1,22 @@
+{% extends "Base.html" %}
+
+{% block title %}登入{% endblock title %}
+
+
+{% block content %}
+<div class="login">
+    <h2>辦理帳號</h2><br><br><br>
+    <form method="post" action="/register">
+        帳號：<input name="userid">
+        <br><br>
+        密碼：<input type="password" name="password">
+        <br><br>
+        信箱：<input type="email" name="email">
+        <br><br>
+        電話：<input type="phone" name="phone">
+        <div class="loginButton">
+            <button type="submit" class="btn btn-outline-success">註冊</button>
+        </div>
+    </form>
+</div>
+{% endblock content %} 
